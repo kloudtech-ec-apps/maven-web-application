@@ -1,3 +1,4 @@
+currentBuild.displayName = "amazon-#"+currentBuild.number
 node
 {
     mavenHome = tool name: "maven3.6.3"
