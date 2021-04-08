@@ -1,7 +1,13 @@
 currentBuild.displayName = "amazon-#"+currentBuild.number
 node
 {
-    mavenHome = tool name: "maven3.6.3"
+//echo "GitHub BranhName ${env.BRANCH_NAME}"
+  //echo "Jenkins Job Number ${env.BUILD_NUMBER}"
+    echo "Jenkins Node Name ${env.NODE_NAME}"
+  echo "Jenkins Home ${env.JENKINS_HOME}"
+  echo "Jenkins URL ${env.JENKINS_URL}"
+  echo "JOB Name ${env.JOB_NAME}"
+mavenHome = tool name: "maven3.6.3"
 stage("SCM Checkout")
 {
 git branch: 'development', credentialsId: '6d74e282-e235-4b25-9508-a1d4ff8b5b24', url: 'https://github.com/kloudtech-ec-apps/maven-web-application.git'    
