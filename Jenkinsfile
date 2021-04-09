@@ -7,7 +7,11 @@ node
   echo "Jenkins Home ${env.JENKINS_HOME}"
   echo "Jenkins URL ${env.JENKINS_URL}"
   echo "JOB Name ${env.JOB_NAME}"
-  properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))])
+  //properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))])
+  properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])
+  timestamps{
+      
+  }
 mavenHome = tool name: "maven3.6.3"
 stage("SCM Checkout")
 {
@@ -27,7 +31,7 @@ stage("Copy artifact into nexus repo")
 }
 stage("Deploy app into tomcat")
 {
-  sshagent(['9b8fe2c7-8c56-4b29-976e-465c6886c697']) {
+  sshagent(['03bff793-97ae-4b0f-95e2-0450647d8552']) {
   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.19.29.162:/opt/tomcat9/webapps/"
 }
 }*/
