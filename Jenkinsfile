@@ -44,11 +44,7 @@ stage('SendEmailNotification')
  9900933955''', subject: 'Build Finshed - Scriptedway', to: 'jinkahariprasad@gmail.com'
  }
     stage('Slack Notification'){
-    slackSend baseUrl: 'https://hooks.slack.com/services/',
-      channel: '#jenkins-pipeline-demo',
-      color: 'good', 
-      teamDomain: 'infycloud', 
-      tokenCredentialId: 'slack demo'  
+    slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkins-pipeline-demo', color: '"#439FE0", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"', message: '"started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"', teamDomain: 'infycloud', tokenCredentialId: 'slack demo', username: 'jinakhariprasad'  
     }
   }
 }
