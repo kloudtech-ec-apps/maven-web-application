@@ -47,7 +47,7 @@ stage('SendEmailNotification')
     slackSend baseUrl: 'https://hooks.slack.com/services/',
       channel: 'jenkins-pipeline-demo',
       color: 'good', 
-      teamDomain: 'infycloud', 
+      teamDomain: 'jinkahariprasad', 
       tokenCredentialId: 'slack demo'  
     }
   }
