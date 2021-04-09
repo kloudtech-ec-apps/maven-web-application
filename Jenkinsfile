@@ -28,7 +28,7 @@ stage("Copy artifact into nexus repo")
 stage("Deploy app into tomcat")
 {
   sshagent(['9b8fe2c7-8c56-4b29-976e-465c6886c697']) {
-  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.133.58.3:/opt/tomcat9/webapps/"
+  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.19.29.162:/opt/tomcat9/webapps/"
 }
 }*/
 stage('SendEmailNotification')
