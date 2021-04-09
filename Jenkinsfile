@@ -43,5 +43,12 @@ stage('SendEmailNotification')
  Hari Jinka,
  9900933955''', subject: 'Build Finshed - Scriptedway', to: 'jinkahariprasad@gmail.com'
  }
+    stage('Slack Notification'){
+    slackSend baseUrl: 'https://hooks.slack.com/services/',
+      channel: 'jenkins-pipeline-demo',
+      color: 'good', 
+      teamDomain: 'infycloud', 
+      tokenCredentialId: 'slack demo'  
+    }
   }
 }
