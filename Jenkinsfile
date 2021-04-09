@@ -11,7 +11,7 @@ node
   properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])
   timestamps{
       
-  }
+  
 mavenHome = tool name: "maven3.6.3"
 stage("SCM Checkout")
 {
@@ -43,4 +43,5 @@ stage('SendEmailNotification')
  Hari Jinka,
  9900933955''', subject: 'Build Finshed - Scriptedway', to: 'jinkahariprasad@gmail.com'
  }
+  }
 }
