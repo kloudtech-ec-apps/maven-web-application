@@ -45,7 +45,7 @@ stage('SendEmailNotification')
  }
     stage('Slack Notification'){
     slackSend baseUrl: 'https://hooks.slack.com/services/',
-      channel: 'jenkins-pipeline-demo',
+      channel: '#jenkins-pipeline-demo',
       color: 'good', 
       teamDomain: 'jinkahariprasad', 
       tokenCredentialId: 'slack demo'  
