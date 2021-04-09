@@ -21,11 +21,11 @@ stage("Build artifact")
 {
   sh "${mavenHome}/bin/mvn clean package" 
 }
-/*stage("Create sonarqube report")
+stage("Create sonarqube report")
 {
   sh "${mavenHome}/bin/mvn sonar:sonar" 
 }
-stage("Copy artifact into nexus repo")
+/*stage("Copy artifact into nexus repo")
 {
   sh "${mavenHome}/bin/mvn deploy" 
 }
