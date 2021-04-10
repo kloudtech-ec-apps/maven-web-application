@@ -25,11 +25,11 @@ stage("Create sonarqube report")
 {
   sh "${mavenHome}/bin/mvn sonar:sonar" 
 }
-/*stage("Copy artifact into nexus repo")
+stage("Copy artifact into nexus repo")
 {
   sh "${mavenHome}/bin/mvn deploy" 
 }
-stage("Deploy app into tomcat")
+/*stage("Deploy app into tomcat")
 {
   sshagent(['03bff793-97ae-4b0f-95e2-0450647d8552']) {
   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.19.29.162:/opt/tomcat9/webapps/"
