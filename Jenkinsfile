@@ -1,6 +1,8 @@
 currentBuild.displayName = "az-#"+currentBuild.number
 pipeline{
-	agent any
+	agent any{
+	label 'slave-1'
+	}
 	tools{
 	maven 'maven3.6.3'
 	}
@@ -37,7 +39,7 @@ pipeline{
 		}
 		stage("Deploy app into tomcat"){
 		    steps{
-				sshagent(['03bff793-97ae-4b0f-95e2-0450647d8552']) {
+				sshagent(['tomcat-cred']) {
 					sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.19.29.162:/opt/tomcat9/webapps/"
 					}
 				}
