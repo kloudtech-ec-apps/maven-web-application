@@ -31,7 +31,7 @@ stage("Copy artifact into nexus repo")
 }
 stage("Deploy app into tomcat")
 {
-  sshagent(['03bff793-97ae-4b0f-95e2-0450647d8552']) {
+  sshagent(['df356366-2b5c-42fd-8c67-59362bf691b2']) {
   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.19.29.162:/opt/tomcat9/webapps/"
 }
 }
