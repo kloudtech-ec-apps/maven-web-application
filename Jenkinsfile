@@ -1,5 +1,5 @@
 currentBuild.displayName = "amazon-#"+currentBuild.number
-node("nodes")
+node("slave-1")
 {
 //echo "GitHub BranhName ${env.BRANCH_NAME}"
   //echo "Jenkins Job Number ${env.BUILD_NUMBER}"
