@@ -32,7 +32,7 @@ stage("Create sonarqube report")
 stage("Deploy app into tomcat")
 {
   sshagent(['03bff793-97ae-4b0f-95e2-0450647d8552']) {
-  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.19.29.162:/opt/tomcat9/webapps"
+  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.19.29.162:/opt/tomcat9/webapps/"
 }
 }
 stage('SendEmailNotification')
