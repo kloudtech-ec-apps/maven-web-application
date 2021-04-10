@@ -1,8 +1,6 @@
 currentBuild.displayName = "az-#"+currentBuild.number
 pipeline{
-	agent any{
-	label 'slave-1'
-	}
+	agent any
 	tools{
 	maven 'maven3.6.3'
 	}
