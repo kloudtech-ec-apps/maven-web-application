@@ -31,7 +31,7 @@ pipeline{
 				sh "mvn clean package" 
 			}
 		}
-        stage("Create sonarqube report"){
+       /* stage("Create sonarqube report"){
 			steps{
 			sh "mvn sonar:sonar" 
 			}
@@ -48,7 +48,7 @@ pipeline{
 					}
 				}
 			}
-	}
+	}*/
 	post("Send Email Configuration"){
 	success{
 	emailext body: '''Build Finished Successfully- DeclarativeWay
