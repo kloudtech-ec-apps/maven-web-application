@@ -37,7 +37,7 @@ stage("Deploy app into tomcat")
 }
 stage('SendEmailNotification')
  {
- emailext body: '''Build Finished - Scriptedway
+ emailext body: '''Build Finished - Scriptedway Build # is ..${env.BUILD_NUMBER}
 
  Regards,
  Hari Jinka,
