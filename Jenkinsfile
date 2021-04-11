@@ -2,7 +2,7 @@ currentBuild.displayName = "az-#"+currentBuild.number
 pipeline{
 	//agent any
 	agent {
-	lebel 'slave-1'
+	label 'slave-1'
 	}
 		
 	tools{
