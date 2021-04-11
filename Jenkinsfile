@@ -8,9 +8,9 @@ pipeline{
 	tools{
 	maven 'maven3.6.3'
 	}
-	triggers{
+	/*triggers{
 		pollSCM('* * * * *')
-	}
+	}*/
 	options{
 		//Add the timestamp to the consoleoutput
 		timestamps()
