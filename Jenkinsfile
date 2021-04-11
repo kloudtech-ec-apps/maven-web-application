@@ -37,7 +37,7 @@ stage("Deploy app into tomcat")
 }
 stage('SendEmailNotification')
  {
- emailext body: '''Build Finished - Scriptedway Build # is ..${env.BUILD_NUMBER}
+ emailext body: '''Build Finished - Scriptedway
 
  Regards,
  Hari Jinka,
@@ -49,7 +49,7 @@ stage('SendEmailNotification')
     slackSend baseUrl: 'https://hooks.slack.com/services/', 
     channel: '#jenkins-pipeline-demo', 
     color: '"#439FE0"', 
-    //message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"', 
+    message: '"Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"', 
     message: 'started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)', 
     teamDomain: 'infycloud',
     tokenCredentialId: 'slack demo', 
