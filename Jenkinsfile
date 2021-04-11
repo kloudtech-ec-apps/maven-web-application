@@ -2,15 +2,17 @@ currentBuild.displayName = "az-#"+currentBuild.number
 pipeline{
 	//agent any
 	agent {
-	label 'slave-1'
+	//label 'slave-1'
+	//label 'slave-2'
+	label 'nodes'
 	}
 		
 	tools{
 	maven 'maven3.6.3'
 	}
-	/*triggers{
+	triggers{
 		pollSCM('* * * * *')
-	}*/
+	}
 	options{
 		//Add the timestamp to the consoleoutput
 		timestamps()
