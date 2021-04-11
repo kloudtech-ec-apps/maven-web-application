@@ -41,7 +41,9 @@ stage('SendEmailNotification')
 
  Regards,
  Hari Jinka,
- 9900933955''', subject: 'Build Finshed - Scriptedway', to: 'jinkahariprasad@gmail.com'
+ 9900933955''', 
+ subject: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.", 
+ to: 'jinkahariprasad@gmail.com'
  }
     stage('Slack Notification'){
     slackSend baseUrl: 'https://hooks.slack.com/services/', 
