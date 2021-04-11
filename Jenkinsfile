@@ -47,8 +47,8 @@ pipeline{
 					sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.19.29.162:/opt/tomcat9/webapps/"
 					}
 				}
-			}
-	}*/
+			}*/
+	}
 	post("Send Email Configuration"){
 	success{
 	emailext body: '''Build Finished Successfully- DeclarativeWay
