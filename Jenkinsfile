@@ -11,7 +11,7 @@ pipeline{
 	maven 'maven3.6.3'
 	}
 	triggers{
-		pollSCM('* * * * *')
+		//pollSCM('* * * * *')
 	}
 	options{
 		//Add the timestamp to the consoleoutput
