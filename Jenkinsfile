@@ -46,7 +46,7 @@ stage('SendEmailNotification')
     stage('Slack Notification'){
     slackSend baseUrl: 'https://hooks.slack.com/services/', 
     channel: '#jenkins-pipeline-demo', 
-    color: '"#439FE0", 
+    color: '"#439FE0"', 
     //message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"', 
     message: '"started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"', 
     teamDomain: 'infycloud',
