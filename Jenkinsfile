@@ -21,7 +21,7 @@ stage("Build artifact")
 {
   sh "${mavenHome}/bin/mvn clean package" 
 }
-stage("Create sonarqube report")
+/*stage("Create sonarqube report")
 {
   sh "${mavenHome}/bin/mvn sonar:sonar" 
 }
@@ -34,7 +34,7 @@ stage("Deploy app into tomcat")
   sshagent(['df356366-2b5c-42fd-8c67-59362bf691b2']) {
   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.19.29.162:/opt/tomcat9/webapps/"
   }
-}
+}*/
 stage('SendEmailNotification')
  {
  emailext body: '''Build Finished - Scriptedway
