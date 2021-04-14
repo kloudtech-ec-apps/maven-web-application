@@ -1,5 +1,5 @@
 currentBuild.displayName = "az-#"+currentBuild.number
-properties([pipelineTriggers([githubPush()])])
+//properties([pipelineTriggers([githubPush()])])
 pipeline{
 	//agent any
 	agent {
@@ -11,9 +11,10 @@ pipeline{
 	tools{
 	maven 'maven3.6.3'
 	}
-	//triggers{
+        triggers{
 		//pollSCM('* * * * *')
-	//}
+	githubPush()
+        }
 	options{
 		//Add the timestamp to the consoleoutput
 		timestamps()
