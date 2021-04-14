@@ -1,4 +1,4 @@
-currentBuild.displayName = "az-#"+currentBuild.number
+//currentBuild.displayName = "az-#"+currentBuild.number
 //properties([pipelineTriggers([githubPush()])])
 pipeline{
 	//agent any
@@ -20,6 +20,7 @@ pipeline{
 		timestamps()
 		
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '3', daysToKeepStr: '', numToKeepStr: '5')
+		currentBuild.displayName = "az-#"+currentBuild.number
      
 	}
 	stages{
