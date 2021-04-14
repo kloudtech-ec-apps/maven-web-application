@@ -24,7 +24,7 @@ pipeline{
 	stages{
 		stage("SCM checkout"){
 			steps{
-				git branch: 'development', credentialsId: '6d74e282-e235-4b25-9508-a1d4ff8b5b24', url: 'https://github.com/kloudtech-ec-apps/maven-web-application.git'
+				git branch: 'master', credentialsId: '6d74e282-e235-4b25-9508-a1d4ff8b5b24', url: 'https://github.com/kloudtech-ec-apps/maven-web-application.git'
 			}
 		}
 		stage("Build artifact"){
