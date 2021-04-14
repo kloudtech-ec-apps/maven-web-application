@@ -1,4 +1,5 @@
 currentBuild.displayName = "az-#"+currentBuild.number
+properties([pipelineTriggers([githubPush()])])
 pipeline{
 	//agent any
 	agent {
