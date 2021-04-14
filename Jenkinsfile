@@ -3,9 +3,9 @@ properties([pipelineTriggers([githubPush()])])
 pipeline{
 	//agent any
 	agent {
-	//label 'slave-1'
+	label 'slave-1'
 	//label 'slave-2'
-	label 'nodes'
+	//label 'nodes'
 	}
 		
 	tools{
